@@ -1,4 +1,14 @@
 function Validator(formSelecter) {
+
+    function getParent(element, selector) {
+        while (element.parentElement) {
+            if (element.parentElement.matches(selector)) {
+                return element.parentElement;
+            }
+            element = element.parentElement;
+        }
+    }
+
     var formRules = {};
 
     var validatorRules = {
@@ -22,7 +32,7 @@ function Validator(formSelecter) {
     };
 
     var formElemnt = document.querySelector(formSelecter);
-
+    //Đoạn này khó hiểu
     if (formElemnt) {
         var inputs = formElemnt.querySelectorAll('[name][rules]');
 
@@ -50,13 +60,44 @@ function Validator(formSelecter) {
                 }
             }
             input.onblur = handleValidate;
+            input.oninput = handleClearError;
+
         }
+        //
         function handleValidate(event) {
-            console.log(formRules[event.target.name]);
+            var rules = formRules[event.target.name];
+            var errorMessage;
+
+            rules.some(function (rule) {
+                errorMessage = rule(event.target.value);
+                return errorMessage;
+            });
+            if (errorMessage) {
+                var formGroup = getParent(event.target, '.form-group');
+                if (formGroup) {
+                    formGroup.classList.add('invalid');
+                    var formMessage = formGroup.querySelector('.form-message');
+                    if (formMessage) {
+                        formMessage.innerText = errorMessage;
+                    }
+                }
+            }
+        }
+
+        function handleClearError(event) {
+            var formGroup = getParent(event.target, '.form-group');
+            if (formGroup.classList.contains('invalid')) {
+                formGroup.classList.remove('invalid');
+                var formMessage = formGroup.querySelector('.form-message');
+                if (formMessage) {
+                    formMessage.innerText = '';
+                }
+            }
         }
     }
-    console.log(formRules);
 }
+
+
 
 
 
