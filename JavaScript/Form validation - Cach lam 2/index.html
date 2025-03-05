@@ -77,11 +77,14 @@
   <script src="validator.js"></script>
   <script>
 
-    Validator('#regiter-form');
+  Validator('#regiter-form', {
+    onSubmit: function () {
+      console.log("Call API");
+    }
+  });
+
   </script>
 </body>
 
 </html>
 
-
-<!-- Chưa hoàn thành án gửi thì lỗi vl -->

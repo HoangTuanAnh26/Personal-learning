@@ -1,4 +1,7 @@
-function Validator(formSelecter) {
+function Validator(formSelecter, options) {
+    if (!options) {
+        options = {};
+    }
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -82,6 +85,7 @@ function Validator(formSelecter) {
                     }
                 }
             }
+            return !errorMessage;
         }
 
         function handleClearError(event) {
@@ -95,9 +99,31 @@ function Validator(formSelecter) {
             }
         }
     }
+
+    formElemnt.onsubmit = function (event) {
+        event.preventDefault();
+
+        var inputs = formElemnt.querySelectorAll('[name][rules]');
+        var isValid = true;
+        for (var input of inputs) {
+            if (!handleValidate({ target: input })) {
+                isValid = false;
+            }
+        }
+        if (isValid) {
+            if (typeof options.onSubmit === 'function') {
+                options.onSubmit();
+            } else {
+                formElemnt.submit();
+            }
+        }
+    }
 }
-
-
+// Học lại　object constructor
+//Đưa code lên github
+//Xem lai phần code onsubmit bằng Chatbot
+//Phần ontions chưa hiểu
+//Chưa có phần lấy ra data ở đoạn cuối video
 
 
 
