@@ -77,6 +77,12 @@ html {
   color: #f33a58;
 }
 
+.form-group div {
+  display: inline-flex; /* Căn chỉnh các phần tử trên cùng một dòng */
+  align-items: center;  /*Căn giữa các phần tử theo chiều dọc*/
+  margin-right: 20px;    /* Khoảng cách giữa các phần tử */
+}
+
 .form-message {
   font-size: 1.2rem;
   line-height: 1.6rem;

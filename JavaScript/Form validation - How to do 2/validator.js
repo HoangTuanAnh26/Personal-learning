@@ -1,7 +1,6 @@
-function Validator(formSelecter, options) {
-    if (!options) {
-        options = {};
-    }
+function Validator(formSelector) {
+    var _this = this;
+    var formRules = {};
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -11,8 +10,6 @@ function Validator(formSelecter, options) {
             element = element.parentElement;
         }
     }
-
-    var formRules = {};
 
     var validatorRules = {
         required: function (value) {
@@ -34,10 +31,9 @@ function Validator(formSelecter, options) {
         }
     };
 
-    var formElemnt = document.querySelector(formSelecter);
-    //Đoạn này khó hiểu
-    if (formElemnt) {
-        var inputs = formElemnt.querySelectorAll('[name][rules]');
+    var formElement = document.querySelector(formSelector);
+    if (formElement) {
+        var inputs = formElement.querySelectorAll('[name][rules]');
 
         for (var input of inputs) {
 
@@ -62,19 +58,21 @@ function Validator(formSelecter, options) {
                     formRules[input.name] = [ruleFunc];
                 }
             }
+
             input.onblur = handleValidate;
             input.oninput = handleClearError;
 
         }
-        //
+
         function handleValidate(event) {
             var rules = formRules[event.target.name];
             var errorMessage;
 
-            rules.some(function (rule) {
+            for (var rule of rules) {
                 errorMessage = rule(event.target.value);
-                return errorMessage;
-            });
+                if (errorMessage) break;
+            }
+
             if (errorMessage) {
                 var formGroup = getParent(event.target, '.form-group');
                 if (formGroup) {
@@ -100,30 +98,54 @@ function Validator(formSelecter, options) {
         }
     }
 
-    formElemnt.onsubmit = function (event) {
+    formElement.onsubmit = function (event) {
         event.preventDefault();
+        console.log(_this);
 
-        var inputs = formElemnt.querySelectorAll('[name][rules]');
+        var inputs = formElement.querySelectorAll('[name][rules]');
         var isValid = true;
         for (var input of inputs) {
+            //Đoạn này chưa hiểu
             if (!handleValidate({ target: input })) {
                 isValid = false;
             }
         }
         if (isValid) {
-            if (typeof options.onSubmit === 'function') {
-                options.onSubmit();
+            if (typeof _this.onSubmit === 'function') {
+                var enableInputs = formElement.querySelectorAll('[name]:not([disabled])');
+                var formValues = Array.from(enableInputs).reduce(function (values, input) {
+
+                    switch (input.type) {
+                        case 'radio':
+                            values[input.name] = formElement.querySelector('input[name="' + input.name + '"]:checked').value;
+                            break;
+                        case 'checkbox':
+                            if (!input.matches(':checked')) {
+                                values[input.name] = '';
+                                return values;
+                            }
+                            if (!Array.isArray(values[input.name])) {
+                                values[input.name] = [];
+                            }
+                            values[input.name].push(input.value);
+                            break;
+                        case 'file':
+                            values[input.name] = input.files;
+                            break;
+                        default:
+                            values[input.name] = input.value;
+                    }
+                    return values;
+                }, {});
+                _this.onSubmit(formValues);
             } else {
-                formElemnt.submit();
+                formValues.submit();
             }
         }
     }
 }
-// Học lại　object constructor
-//Đưa code lên github
-//Xem lai phần code onsubmit bằng Chatbot
-//Phần ontions chưa hiểu
-//Chưa có phần lấy ra data ở đoạn cuối video
+
+
 
 
 
