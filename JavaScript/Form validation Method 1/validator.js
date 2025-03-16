@@ -9,6 +9,7 @@ function Validator(options) {
             element = element.parentElement;
         }
     }
+
     var selectorRules = {};
 
     // Hàm thực hiện thay đổi thông báo lỗi
@@ -169,6 +170,3 @@ Validator.isConfirmed = function (selector, getConfirmValue, message) {
         }
     }
 }
-
-// Học callback function
-

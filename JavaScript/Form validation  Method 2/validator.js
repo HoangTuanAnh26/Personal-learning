@@ -100,12 +100,10 @@ function Validator(formSelector) {
 
     formElement.onsubmit = function (event) {
         event.preventDefault();
-        console.log(_this);
 
         var inputs = formElement.querySelectorAll('[name][rules]');
         var isValid = true;
         for (var input of inputs) {
-            //Đoạn này chưa hiểu
             if (!handleValidate({ target: input })) {
                 isValid = false;
             }
@@ -114,7 +112,6 @@ function Validator(formSelector) {
             if (typeof _this.onSubmit === 'function') {
                 var enableInputs = formElement.querySelectorAll('[name]:not([disabled])');
                 var formValues = Array.from(enableInputs).reduce(function (values, input) {
-
                     switch (input.type) {
                         case 'radio':
                             values[input.name] = formElement.querySelector('input[name="' + input.name + '"]:checked').value;
@@ -144,10 +141,4 @@ function Validator(formSelector) {
         }
     }
 }
-
-
-
-
-
-
 
