@@ -1,11 +1,16 @@
-import java.time.Year;
 import java.util.Scanner;
 
 public class PersonInfo {
-	public static boolean askYesNo(Scanner scanner, String prompt) {
+
+	public static void main(String[] args) {
+		askPersonInfo();
+	}
+
+	public static boolean askYesNo(String prompt) {
+		Scanner scanner = new Scanner(System.in);
 		while (true) {
 			System.out.print(prompt);
-			String answer = scanner.nextLine().trim().toLowerCase();
+			String answer = scanner.nextLine().toLowerCase();
 			if (answer.equals("yes")) {
 				return true;
 			} else if (answer.equals("no")) {
@@ -15,13 +20,14 @@ public class PersonInfo {
 	}
 
 	public static int calculateAge(int yearBorn) {
-		int currentYear = Year.now().getValue();
+		int currentYear = java.time.Year.now().getValue();
 		return currentYear - yearBorn;
 	}
 
 	public static double convertMeterToFeet(double meter) {
 		final double METER_TO_FEET = 3.281;
-		return Math.round(meter * METER_TO_FEET * 10.0) / 10.0;
+		double feet = meter * METER_TO_FEET;
+		return Math.round(feet * 10.0) / 10.0;
 	}
 
 	public static void printHeightInfo(double heightFeet, boolean isMale) {
@@ -52,33 +58,41 @@ public class PersonInfo {
 		}
 	}
 
-	public static void printPersonInfo(String firstName, String lastName, int age, double heightFeet,
+	public static void printPersonInfo(String firstname, String lastname, int age, double heightFeet,
 			boolean isVietnamese, boolean isMale) {
-		int currentYear = Year.now().getValue();
+		int currentYear = java.time.Year.now().getValue();
 		System.out.println("\n---");
-		System.out.println("Your name is " + firstName + " " + lastName);
-		System.out.printf("%s is %d years old in %d\n", firstName, age, currentYear);
+		System.out.println("Your name is " + firstname + " " + lastname);
+		System.out.printf("%s is %d years old in %d\n", firstname, age, currentYear);
 		System.out.println("You are " + heightFeet + " feet tall");
-		System.out.println(isVietnamese ? "You are from Vietnam" : "You are not from Vietnam");
+		if (isVietnamese) {
+			System.out.println("You are from Vietnam");
+		} else {
+			System.out.println("You are not from Vietnam");
+		}
 		printHeightInfo(heightFeet, isMale);
 	}
 
-	public static void main(String[] args) {
+	public static void askPersonInfo() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Your first name: ");
-		String firstName = scanner.nextLine();
-		System.out.print("Your last name: ");
-		String lastName = scanner.nextLine();
-		System.out.print("When were you born: ");
+
+		System.out.print("Your firstname: ");
+		String firstname = scanner.nextLine();
+
+		System.out.print("Your lastname: ");
+		String lastname = scanner.nextLine();
+
+		System.out.print("When you were born: ");
 		int yearBorn = Integer.parseInt(scanner.nextLine());
+
 		System.out.print("Your height (meter): ");
 		double heightMeter = Double.parseDouble(scanner.nextLine());
-		boolean isMale = askYesNo(scanner, "Are you male (yes/no): ");
-		boolean isVietnamese = askYesNo(scanner, "Are you Vietnamese (yes/no): ");
-		scanner.close();
+
+		boolean isMale = askYesNo("Are you male (yes/no): ");
+		boolean isVietnamese = askYesNo("Are you Vietnamese (yes/no): ");
 
 		int age = calculateAge(yearBorn);
 		double heightFeet = convertMeterToFeet(heightMeter);
-		printPersonInfo(firstName, lastName, age, heightFeet, isVietnamese, isMale);
+		printPersonInfo(firstname, lastname, age, heightFeet, isVietnamese, isMale);
 	}
 }

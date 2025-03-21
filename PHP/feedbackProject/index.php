@@ -11,9 +11,11 @@
     </div>
     <div class="mb-3">
         <textarea class="form-control" name="feedback" placeholder="Enter your feedback" rows="2"></textarea>
+    </div>
 
-        <div class="mp-3">
-            <input type="submit" class="btn btn-primary" value="Send">
-        </div>
+    <div class="mp-3">
+        <input type="submit" class="btn btn-primary" value="Send">
+    </div>
 </form>
+
 <?php include 'components/footer.php'; ?>
