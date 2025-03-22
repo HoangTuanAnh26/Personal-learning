@@ -1,3 +1,7 @@
+<?php
+    include './configuration/database.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
