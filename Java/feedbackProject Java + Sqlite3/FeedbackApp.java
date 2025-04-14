@@ -2,7 +2,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class FeedbackApp {
-    private static final String DATABASE_URL = "jdbc:sqlite:database.db";
+    private static final String DATABASE_URL = "jdbc:C:\\SQlite\\Database\\データベース論.db";
 
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(DATABASE_URL)) {

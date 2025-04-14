@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
 
-html, body {
+html,
+body {
 	width: 100%;
 	height: 100%;
 	font-family: 'Gamja Flower';
@@ -9,15 +10,15 @@ html, body {
 }
 
 .navbar {
-	background-color: rgba(82,64,120,0.9) !important;
+	background-color: rgba(82, 64, 120, 0.9) !important;
 }
 
 .navbar li a {
-    color: white !important;
+	color: white !important;
 }
 
 .navbar li a:hover {
-    color: black !important;
+	color: black !important;
 }
 
 .carousel-inner img {
@@ -25,8 +26,8 @@ html, body {
 }
 
 .carousel-caption {
-    position: absolute;
-    top: 50%;
+	position: absolute;
+	top: 50%;
 }
 
 .carousel-caption h1 {
@@ -36,63 +37,109 @@ html, body {
 }
 
 .carousel-caption h3 {
-	font-size: 200%;	
+	font-size: 200%;
 	text-shadow: 2px 2px 10px #000;
 }
 
 .btn-primary {
-	background-color: rgb(82,64,120);
+	background-color: rgb(82, 64, 120);
 	border: 1px solid white;
 }
 
 .btn-primary:hover {
-	background-color: rgb(62,44,100);
+	background-color: rgb(62, 44, 100);
 	border: 1px solid white;
 }
 
+.jumbotron {
+	padding: 1rem;
+	border-radius: 0;
+}
+
+.welcome hr {
+	border-top: 2px solid rgb(62, 44, 100, 0.6);
+	width: 95%;
+	margin-bottom: 2rem;
+}
+
+.fa-react {
+	color: #61DBFB;
+	font-size: 200%;
+}
+
+.fa-angular {
+	color: #DD0031;
+	font-size: 200%;
+}
+
+.fa-css3 {
+	color: #d76537;
+	font-size: 200%;
+}
+
+.fa-react .fa-angular .fa-css3 {
+	font-size: 4rem;
+	margin: 1rem;
+}
+
+.fun {
+	width: 100%;
+}
+
 /*Media Query*/
-@media (max-width: 992px){
+@media (max-width: 992px) {
 	.carousel-caption {
 		top: 20%;
 	}
-	.carousel-caption h1{
+
+	.carousel-caption h1 {
 		font-size: 250%;
 	}
-	.carousel-caption h3{		
-		font-size: 160%;		
+
+	.carousel-caption h3 {
+		font-size: 160%;
 	}
-	.carousel-caption .btn{		
-		font-size: 120%;		
+
+	.carousel-caption .btn {
+		font-size: 120%;
 	}
 }
-@media (max-width: 768px){	
+
+@media (max-width: 768px) {
 	.carousel-caption {
 		top: 20%;
 	}
-	.carousel-caption h1{
+
+	.carousel-caption h1 {
 		font-size: 220%;
 	}
-	.carousel-caption h3{		
+
+	.carousel-caption h3 {
 		font-size: 140%;
 		padding-bottom: 0.2rem;
 	}
-	.carousel-caption .btn{		
+
+	.carousel-caption .btn {
 		font-size: 95%;
 		padding: 8px 14px;
 	}
 }
-@media (max-width: 576px){
+
+@media (max-width: 576px) {
 	.carousel-caption {
 		top: 10%;
 	}
-	.carousel-caption h1{
+
+	.carousel-caption h1 {
 		font-size: 150%;
 	}
-	.carousel-caption h3{		
-		font-size: 110%;		
+
+	.carousel-caption h3 {
+		font-size: 110%;
 	}
-	.carousel-caption .btn {		
+
+	.carousel-caption .btn {
 		font-size: 90%;
 		padding: 4px 8px;
-	}	
+	}
 }
