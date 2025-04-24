@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base_日本語.css">
+    <link rel="stylesheet" href="./assets/css/main_日本語.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="gird">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-pr header__navbar-item--separate">
+                            美しい猿の花果山の中に
+
+                            <!-- Header QR Code -->
+                            <div class="header__pr">
+                                <img src="./assets/img/qr_code.png" alt="QR code" class="header__pr-img">
+                                <div class="header__pr-apps">
+                                    <a href="" class="header__pr-link">
+                                        <img src="./assets/img/google_play.png" alt="Google Play" class="header__pr-download-img">
+                                    </a>
+                                    <a href="" class="header__pr-link">
+                                        <img src="./assets/img/app_store.png" alt="App Store" class="header__pr-download-img">
+                                    </a>
+                                </div>
+                             </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">リンク</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-square-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-square-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-notify">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-regular fa-bell"></i>
+                                お知らせ
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3>新しい通知</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="./assets/img/dua hau.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">自家栽培のスイカ</span>
+                                                <span class="header__notify-description">殺虫剤や成長促進剤を使用しません</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="./assets/img/vai thieu.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">ハイ ズオンのライチ</span>
+                                                <span class="header__notify-description">虫がいない、世界最高のライチ</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="./assets/img/nho.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">中国のブドウは腐ったりすることなく一年中保存出来ます</span>
+                                                <span class="header__notify-description">甘味が高く、新鮮で高品質な商品</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="" class="header__notify-footer-btn">すべて見る</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-regular fa-circle-question"></i>
+                                ヘルプ
+                            </a>
+                        </li>
+                        <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">ユーザー登録 </li>
+                        <li class="header__navbar-item header__navbar-item--strong">ログイン</li> -->
+                        <li class="header__navbar-item header__navbar-user">
+                            <img src="assets/img/a.jpg" alt="" class="header__navbar-user-img">
+                            <span class="header__navbar-user-name">ホアン　トゥアン　アイン</span>
+
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item">
+                                    <a href="">アカウント</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">アドレス</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">注文</a>
+                                </li>
+                                <li class="header__navbar-user-item header__navbar-user-item-separate">
+                                    <a href="">ログアウト</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header with search -->
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link">
+                            <img src="assets/img/monkey.svg" alt="" class="header__logo-img">
+                        </a>
+                    </div>
+
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="入力して検索します">
+
+                            <!-- Search history -->
+                             <div class="header__search-history">
+                                <h3 class="header__search-history-heading">検索履歴</h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="">トルコのデントコーン</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">もぎたてのサパのピーチ</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">世界で一番おいしいオーシャンのハイズオンのグアバ</a>
+                                    </li>
+                                </ul>
+                             </div>
+                        </div>
+                        <div class="header__search-select">
+                            <span class="header__search-select-label">同メーカー</span>
+                            <i class="header__search-select-icon fa-solid fa-caret-down"></i>
+
+                            <ul class="header__search-option">
+                                <li class="header__search-option-item header__search-option-item--active">
+                                    <span>同メーカー</span>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+                                <li class="header__search-option-item">
+                                    <span>別メーカー</span>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="header__search-btn">
+                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cart layout -->
+                    <div class="header__cart">
+                        <div class="header__cart-wrap">
+                            <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+                            <span class="header__cart-notice">3</span>
+                            
+                            <!-- No cart: header__cart-list--no-cart -->
+                            <div class="header__cart-list">
+                                <img src="./assets/img/no_cart.png" alt="" class="header__cart-no-cart-img">
+                                <span class="header__cart-list-no-cart-msg">
+                                    商品がありません
+                                </span>
+                                <h4 class="header__cart-heading">追加された商品</h4>
+                                <ul class="header__cart-list-item">
+                                    <!-- Cart item -->
+                                     <li class="header__cart-item">
+                                         <img src="assets/img/sau rieng.jpg" alt="" class="header__cart-img">
+                                         <div class="header__cart-item-info">
+                                             <div class="header__cart-item-head">
+                                                 <h5 class="header__cart-item-name">サイゴンドリアン</h5>
+                                                 <div class="header__cart-item-price-wrap">
+                                                     <span class="header__cart-item-price">150円</span>
+                                                     <span class="header__cart-item-multiply">x</span>
+                                                     <span class="header__cart-item-qnt">2</span>
+                                                 </div>
+                                             </div>
+                                             <span class="header__cart-item-body">
+                                                 <span class="header__cart-item-description">
+                                                    メーカー：ベトナム
+                                                 </span>
+                                                 <span class="header__cart-item-remove">削除</span>
+                                             </span>
+                                         </div>
+                                     </li>
+                                     <li class="header__cart-item">
+                                        <img src="assets/img/xoai.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">マンゴーフルーツ5個セット </h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">90円</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    メーカー：ベトナム
+                                                </span>
+                                                <span class="header__cart-item-remove">削除</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="assets/img/tao.jpg"class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">中国リンゴ</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">8円</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">9</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    メーカー：中国
+                                                </span>
+                                                <span class="header__cart-item-remove">削除</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="" class="header__cart-view-cart btn btn--primary">カートを見る</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal layout -->
+            <!-- <div class="modal">
+                <div class="modal__overlay">
+
+                </div>
+                <div class="modal__body"> -->
+                    <!-- Register form -->
+                     <!-- <div class="auth-form">
+                        <div class="auth-form__container">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">ユーザー登録</h3>
+                                <span class="auth-form__switch-btn">ログイン</span>
+                            </div>
+
+                            <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" placeholder="メールアドレス">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" placeholder="パスワード">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" placeholder="パスワード再入力">
+                                </div>
+                            </div>
+
+                            <div class="auth-form__aside">
+                                <p class="auth-form__policy-text">
+                                    登録することで、あなたは花果山執行部の
+                                    <a href="" class="auth-form__text-link">利用規約</a> および
+                                    <a href="" class="auth-form__text-link">プライバシーポリシー</a>
+                                    に同意したものとみなされます。
+                                </p>
+                            </div>
+
+                            <div class="auth-form__controls">
+                                <button class="btn btn--normal auth-form__controls-back">戻る</button>
+                                <button class="btn btn--primary">登録</button>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__socials">
+                            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                                <span class="auth-form__socials-tittle">
+                                    Facebookでログイン
+                                </span>
+                            </a>
+
+                            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                                <span class="auth-form__socials-tittle">
+                                    Googleで連携
+                                </span>
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <!-- Login form -->
+                    <!-- <div class="auth-form">
+                        <div class="auth-form__container">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">ログイン</h3>
+                                <span class="auth-form__switch-btn">ユーザー登録</span>
+                            </div>
+
+                            <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" placeholder="メールのアドレス">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" placeholder="パスワード">
+                                </div>
+                            </div>
+
+                            <div class="auth-form__aside">
+                                <div class="auth-form__help">
+                                    <a href="" class="auth-form__help-link auth-form__help-forgot">パスワードを忘れた方はこちら</a>
+                                    <span class="auth-form__help-separate"></span>
+                                    <a href="" class="auth-form__help-link">ヘルプ</a>
+                                </div>
+                            </div>
+
+                            <div class="auth-form__controls">
+                                <button class="btn btn--normal auth-form__controls-back">戻る</button>
+                                <button class="btn btn--primary">ログイン</button>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__socials">
+                            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                                <span class="auth-form__socials-tittle">
+                                    Facebookでログイン
+                                </span>
+                            </a>
+                            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                                <span class="auth-form__socials-tittle">
+                                    Googleでログイン
+                                </span>
+                            </a>
+                        </div>
+                    </div>  -->
+                </div>
+            </div>
+        </header>
+    
+        <div class="app__container">
+            <div class="grid">
+                <div class="grid__row app__content">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <h3 class="category__heading">名目</h3>
+
+                            <ul class="category-list">
+                                <li class="category-item category-item--active">
+                                    <a href="" class="category-item__link">果物</a>
+                                </li>
+                            </ul>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="" class="category-item__link">野菜</a>
+                                </li>
+                            </ul>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="" class="category-item__link">種物</a>
+                                </li>
+                            </ul>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="" class="category-item__link">自然食品</a>
+                                </li>
+                            </ul>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="" class="category-item__link">その他</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="grid__column-10">
+                        <div class="home-filter">
+                            <span class="home-filter__label">並べ替え</span>
+                            <button class="home-filter__btn btn">人気順</button>
+                            <button class="home-filter__btn btn btn--primary">新着順</button>
+                            <button class="home-filter__btn btn">売れ筋順</button>
+
+                            <div class="select-input">
+                                <span class="select-input__label">値段</span>
+                                <i class="select-input__icon fa-solid fa-caret-down"></i>
+
+                                <!-- List options -->
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">安いものから高いものまで</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">高いものから安いものまで</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="home-filter__page">
+                                <span class="home-filter__page-num">
+                                    <span class="home-filter__page-current">1</span>/5
+                                </span>
+
+                                <div class="home-filter__page-control">
+                                    <a href="" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fa-solid fa-caret-left"></i>
+                                    </a>
+                                    <a href="" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fa-solid fa-caret-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="home-product">
+                            <div class="grid__row">
+                                <div class="grid__column-2-4">
+                                    <a href="#" class="home-product-item">
+                                        <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">シャキシャキと甘く、高品質なカインホアのリンゴ</h4>
+                                        <div class="home-product-item__price">
+                                            <div class="home-product-item__price-old">225円</div>
+                                            <div class="home-product-item__price-current">150円</div>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">26個売れた</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">カインホアの果物</span>
+                                            <span class="home-product-item__origin-name">ベトナム</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>お気に入り</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">33%</span>
+                                            <span class="home-product-item__sale-off-label">割引</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a href="#" class="home-product-item">
+                                        <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">シャキシャキと甘く、高品質なカインホアのリンゴ</h4>
+                                        <div class="home-product-item__price">
+                                            <div class="home-product-item__price-old">225円</div>
+                                            <div class="home-product-item__price-current">150円</div>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">26個売れた</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">カインホアの果物</span>
+                                            <span class="home-product-item__origin-name">ベトナム</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>お気に入り</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">33%</span>
+                                            <span class="home-product-item__sale-off-label">割引</span>
+                                        </div>
+                                    </a>
+                                </div>   
+                                <div class="grid__column-2-4">
+                                    <a href="#" class="home-product-item">
+                                        <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">シャキシャキと甘く、高品質なカインホアのリンゴ</h4>
+                                        <div class="home-product-item__price">
+                                            <div class="home-product-item__price-old">225円</div>
+                                            <div class="home-product-item__price-current">150円</div>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">26個売れた</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">カインホアの果物</span>
+                                            <span class="home-product-item__origin-name">ベトナム</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>お気に入り</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">33%</span>
+                                            <span class="home-product-item__sale-off-label">割引</span>
+                                        </div>
+                                    </a>
+                                </div>   
+                                <div class="grid__column-2-4">
+                                    <a href="#" class="home-product-item">
+                                        <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">シャキシャキと甘く、高品質なカインホアのリンゴ</h4>
+                                        <div class="home-product-item__price">
+                                            <div class="home-product-item__price-old">225円</div>
+                                            <div class="home-product-item__price-current">150円</div>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">26個売れた</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">カインホアの果物</span>
+                                            <span class="home-product-item__origin-name">ベトナム</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>お気に入り</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">33%</span>
+                                            <span class="home-product-item__sale-off-label">割引</span>
+                                        </div>
+                                    </a>
+                                </div>   
+                                <div class="grid__column-2-4">
+                                    <a href="#" class="home-product-item">
+                                        <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">シャキシャキと甘く、高品質なカインホアのリンゴ</h4>
+                                        <div class="home-product-item__price">
+                                            <div class="home-product-item__price-old">225円</div>
+                                            <div class="home-product-item__price-current">150円</div>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">26個売れた</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">カインホアの果物</span>
+                                            <span class="home-product-item__origin-name">ベトナム</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>お気に入り</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">33%</span>
+                                            <span class="home-product-item__sale-off-label">割引</span>
+                                        </div>
+                                    </a>
+                                </div>   
+                                <div class="grid__column-2-4">
+                                    <a href="#" class="home-product-item">
+                                        <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">シャキシャキと甘く、高品質なカインホアのリンゴ</h4>
+                                        <div class="home-product-item__price">
+                                            <div class="home-product-item__price-old">225円</div>
+                                            <div class="home-product-item__price-current">150円</div>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">26個売れた</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">カインホアの果物</span>
+                                            <span class="home-product-item__origin-name">ベトナム</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>お気に入り</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">33%</span>
+                                            <span class="home-product-item__sale-off-label">割引</span>
+                                        </div>
+                                    </a>
+                                </div>   
+                                <div class="grid__column-2-4">
+                                    <a href="#" class="home-product-item">
+                                        <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">シャキシャキと甘く、高品質なカインホアのリンゴ</h4>
+                                        <div class="home-product-item__price">
+                                            <div class="home-product-item__price-old">225円</div>
+                                            <div class="home-product-item__price-current">150円</div>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">26個売れた</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">カインホアの果物</span>
+                                            <span class="home-product-item__origin-name">ベトナム</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>お気に入り</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">33%</span>
+                                            <span class="home-product-item__sale-off-label">割引</span>
+                                        </div>
+                                    </a>
+                                </div>      
+                            </div>
+                        </div>
+                        <ul class="pagination home-product__pagination">
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">
+                                <i class="pagination-item__icon fa-solid fa-chevron-left"></i>  
+                                </a>
+                            </li>
+
+                            <li class="pagination-item pagination-item--active">
+                                <a href="" class="pagination-item__link">1</a>
+                            </li>
+
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">2</a>
+                            </li>
+
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">3</a>
+                            </li>
+
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">4</a>
+                            </li>
+
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">5</a>
+                            </li>
+
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">...</a>
+                            </li>
+
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">6</a>
+                            </li>
+
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">
+                                <i class="pagination-item__icon fa-solid fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+        <footer class="footer">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">ウェブサイトでのカスタマーサポート</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">サポートセンター</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">カスタマーサポートメールアドレス</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">商品購入ガイド</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">ウェブサイトでの紹介</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">紹介</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">採用</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">利用規約 </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">名目</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">果物</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">野菜</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">種物</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">自然食品</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">その他</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">フォロー</h3>
+                        
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-square-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-square-instagram"></i>
+                                    Instargram
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-square-youtube"></i>
+                                    Youtube
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">ショップページにアクセス</h3>
+                        <div class="footer__download">
+                            <img src="assets/img/qr_code.png" alt="Download QR" class="footer__download-pr">
+                            <div class="footer__download-apps">
+                                <a href="" class="footer__download-app-link">
+                                    <img src="assets/img/google_play.png" alt="Google play" class="footer__download-app-img">
+                                </a>
+                                <a href="" class="footer__download-app-link">
+                                    <img src="assets/img/app_store.png" alt="App store" class="footer__download-app-img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="grid">
+                    <p class="footer__text">2024 - 著作権は株式会社花果山に帰属します</p>
+                </div>
+            </div>
+        </footer>
+    
+    </div>    
+</body>
+</html>
+
+<!-- Đổi tiền Việt sang tiền Nhật thì chia 2.Làm tròn lên -->
