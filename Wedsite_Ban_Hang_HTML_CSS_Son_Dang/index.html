@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> <!-- Reset giá trị mặc định của trình duyệt -->
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css"> <!-- Lấy icon từ bên ngoài -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><!-- link font chữ -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +18,8 @@
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-pr header__navbar-item--separate">
                             Vào Hoa Quả Sơn Của Mỹ Hầu Vương
@@ -122,11 +124,17 @@
                 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
-                        <a href="/" class="header__logo-link">
+                    <label for="mobile-search-checkbox" class="header_mobile-search">
+                        <i class="header_mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
+                    <div class="header__logo hide-on-tablet">
+                        <a href="https://hoangtuananh26.github.io/HTML_CSS_VN/" class="header__logo-link">
                             <img src="assets/img/monkey.svg" alt="Logo" class="header__logo-img">
                         </a>
                     </div>
+
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
                     
                     <div class="header__search">
                         <div class="header__search-input-wrap">
@@ -249,7 +257,20 @@
                     </div>
                 </div>
             </div>
-
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Phổ biến</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
             <!-- Modal layout -->
             <!-- <div class="modal">
                 <div class="modal__overlay">
@@ -357,9 +378,9 @@
         </header>
         
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">Danh mục</h3>
             
@@ -390,8 +411,9 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter__btn btn">Phổ biến</button>
                             <button class="home-filter__btn btn btn--primary">Mới nhất</button>
@@ -428,10 +450,30 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Hoa quả</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Rau sạch</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Hạt giống</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Thực phẩm thiên nhiên</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Sản phẩm khác</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <div class="home-product">
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
                                 <!-- Product item -->
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/tao.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Táo Khánh Hòa giòn ngọt chất lượng cao</h4>
@@ -467,7 +509,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                        <img src="./assets/img/anh_san_pham/cam.jpg" alt="" class="home-product-item__img">
                                        <h4 class="home-product-item__name">Cam Bắc Giang nhiều vitamin C, tốt cho sức khỏe </h4>
@@ -503,7 +545,7 @@
                                        </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/chanh.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Chanh Mỹ phù hợp với nhiều món ăn</h4>
@@ -539,7 +581,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/day tay_viet quat.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Set Dâu Tây và Viết Quất </h4>
@@ -575,7 +617,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/du du.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Đủ đủ Lạng Sơn miễn phí giao hàng</h4>
@@ -611,7 +653,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/dau tay.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Dây tây nhập khẩu</h4>
@@ -647,7 +689,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/luu.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Lựu Trung Quốc </h4>
@@ -670,7 +712,7 @@
                                             <span class="home-product-item__sold">75đã bán</span>
                                         </div>
                                         <div class="home-product-item__origin">
-                                            <span class="home-product-item__brand">Hoa quả Thượng Hải </span>
+                                            <span class="home-product-item__brand">Hoa quả TQ</span>
                                             <span class="home-product-item__origin-name">Trung Quốc</span>
                                         </div>
                                         <div class="home-product-item__favourite">
@@ -683,7 +725,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/dua hau dctp.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Dưa hấu Đấu Chiến Thắng Phật</h4>
@@ -692,7 +734,7 @@
                                             <span class="home-product-item__price-current">20k</span>
                                         </div>
                                         <div class="home-product-item__action">
-                                            <span class="home-product-item__like ">
+                                            <span class="home-product-item__like">
                                                 <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
                                                 <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
                                             </span>
@@ -719,7 +761,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/xoai.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Xoài đất Bắc trái mùa</h4>
@@ -755,7 +797,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/set hoa qua .jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Set hoa quả ăn đến Tết</h4>
@@ -775,7 +817,7 @@
                                                 <i class="home-product-item__star--gold fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
-                                            <span class="home-product-item__sold">15đã bán</span>
+                                            <span class="home-product-item__sold">15 đã bán</span>
                                         </div>
                                         <div class="home-product-item__origin">
                                             <span class="home-product-item__brand">Hoa quả Lạng Sơn </span>
@@ -791,7 +833,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/dua vang.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Dưa vàng thái sẵn</h4>
@@ -827,7 +869,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
                                         <img src="./assets/img/anh_san_pham/chuoi thai.jpg" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Chuối Thái</h4>
@@ -910,12 +952,11 @@
                 </div>
             </div>
         </div>
-        <!-- Hien Tai_______________________________ -->
         
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -929,7 +970,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -943,7 +984,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -963,7 +1004,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         
                         <ul class="footer-list">
@@ -976,7 +1017,7 @@
                             <li class="footer-item">
                                 <a href="" class="footer-item__link">
                                     <i class="footer-item__icon fa-brands fa-square-instagram"></i>
-                                    Instargram
+                                    Instagram
                                 </a>
                             </li>
                             <li class="footer-item">
@@ -987,7 +1028,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-8 c-12">
                         <h3 class="footer__heading">Vào của hàng trên ứng dụng</h3>
                         <div class="footer__download">
                             <img src="assets/img/qr_code.png" alt="Download QR" class="footer__download-pr">
@@ -1004,7 +1045,7 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__text">2024 - Bản quyền thuộc về công ty trách nhiệm hữu hạn Hoa Quả Sơn</p>
                 </div>
             </div>
@@ -1020,6 +1061,9 @@
 
 
 <!-- Chỉ sử dụng được font-size đã cài đặt -->
+<!-- Ấn giỏ hàng không hiện sản phẩm
+Phần chữ ở home-product-item__brand quá dài thì bị tràn dòng
+Chữ trong shop ấn cũng không mở ra được -->
 
 
  

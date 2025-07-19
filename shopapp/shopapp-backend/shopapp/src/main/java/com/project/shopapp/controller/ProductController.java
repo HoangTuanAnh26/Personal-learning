@@ -18,12 +18,9 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.UUID;
 
-
-
 @RestController
 @RequestMapping("/api/v1/products")
 public class ProductController {
-
 
     @PostMapping(value = "",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
