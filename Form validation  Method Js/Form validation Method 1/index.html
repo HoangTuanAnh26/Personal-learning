@@ -12,65 +12,65 @@
   <div class="main">
 
     <form action="" method="POST" class="form" id="form-1">
-      <h3 class="heading">Thành viên đăng ký</h3>
-      <p class="desc">Cùng nhau học lập trình miễn phí tại F8 ❤️</p>
+      <h3 class="heading">会員登録</h3>
+      <p class="desc">一緒にプログラミングを学びましょう ❤️</p>
 
       <div class="spacer"></div>
 
       <div class="form-group">
-        <label for="fullname" class="form-label">Tên đầy đủ</label>
-        <input id="fullname" name="fullname" type="text" placeholder="VD: Hoang Tuan Anh" class="form-control">
+        <label for="fullname" class="form-label">氏名</label>
+        <input id="fullname" name="fullname" type="text" placeholder="例: Hoang Tuan Anh" class="form-control">
         <span class="form-message"></span>
       </div>
 
       <div class="form-group">
-        <label for="email" class="form-label">Email</label>
-        <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
+        <label for="email" class="form-label">メールアドレス</label>
+        <input id="email" name="email" type="text" placeholder="例: email@domain.com" class="form-control">
         <span class="form-message"></span>
       </div>
 
       <div class="form-group">
-        <label for="password" class="form-label">Mật khẩu</label>
-        <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+        <label for="password" class="form-label">パスワード</label>
+        <input id="password" name="password" type="password" placeholder="パスワードを入力" class="form-control">
         <span class="form-message"></span>
       </div>
 
       <div class="form-group">
-        <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
-        <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+        <label for="password_confirmation" class="form-label">パスワード再入力</label>
+        <input id="password_confirmation" name="password_confirmation" placeholder="もう一度パスワードを入力" type="password" class="form-control">
         <span class="form-message"></span>
       </div>
 
       <div class="form-group">
-        <label for="avatar" class="form-label">Ảnh đại diện</label>
-        <input id="avatar" name="Ảnh đại diện" type="file" class="form-control">
+        <label for="avatar" class="form-label">プロフィール画像</label>
+        <input id="avatar" name="プロフィール画像" type="file" class="form-control">
         <span class="form-message"></span>
       </div>
 
       <div class="form-group">
-        <label for="password_confirmation" class="form-label">Giới tính</label>
+        <label for="password_confirmation" class="form-label">性別</label>
         <div>
-            <input name="gender" value="Nam" type="radio" class="form-control">
-            <span>Nam</span>
+            <input name="gender" value="男性" type="radio" class="form-control">
+            <span>男性</span>
         </div>
         <div>
-            <input name="gender" value="Nữ" type="radio" class="form-control">
-            <span>Nữ</span>
+            <input name="gender" value="女性" type="radio" class="form-control">
+            <span>女性</span>
         </div>
         <span class="form-message"></span>
     </div>
     
       <div class="form-group">
-        <label for="province" class="form-label">Nơi sống</label>
+        <label for="province" class="form-label">居住地</label>
         <select id="province" name="province" class="form-control">
-          <option value="">Chọn nơi ở hiện tại</option>
-          <option value="hn">Hà Nội</option>
-          <option value="hcm">Hồ Chí Minh</option>
-          <option value="hd">Hải Dương</option>
+          <option value="">現在の居住地を選択</option>
+          <option value="hn">ハノイ</option>
+          <option value="hcm">ホーチミン</option>
+          <option value="hd">ハイズオン</option>
         </select>
         <span class="form-message"></span>
       </div>
-      <button class="form-submit">Đăng ký</button>
+      <button class="form-submit">登録</button>
     </form>
   </div>
 
@@ -82,16 +82,16 @@
       formGroupSelector: '.form-group',
       errorSelector: '.form-message',
       rules: [
-      Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+      Validator.isRequired('#fullname', '氏名を入力してください'),
       Validator.isEmail('#email'),
       Validator.minLength('#password', 6),
-      Validator.isRequired('#password_confirmation', 'Vui lòng nhập lại mật khẩu của bạn'),
+      Validator.isRequired('#password_confirmation', 'もう一度パスワードを入力してください'),
       Validator.isRequired('#avatar'),
       Validator.isRequired('input[name="gender"]'),
       Validator.isRequired('#province'),
       Validator.isConfirmed('#password_confirmation', function () {
         return document.querySelector('#form-1 #password').value;
-      }, 'Mật khẩu nhập lại không chính xác')
+      }, 'パスワードが一致しません')
       ],
       onSubmit: function (data) {
         // Call API

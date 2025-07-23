@@ -137,7 +137,7 @@ Validator.isRequired = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value ? undefined : message || 'Vui lòng nhập trường này';
+            return value ? undefined : message || 'この項目は必須です';
         }
     }
 }
@@ -148,7 +148,7 @@ Validator.isEmail = function (selector, message) {
         test: function (value) {
             var regex =
                 /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-            return regex.test(value) ? undefined : message || 'Trường này phải là email';
+            return regex.test(value) ? undefined : message || '正しいメールアドレスを入力してください';
         }
     }
 }
@@ -157,7 +157,7 @@ Validator.minLength = function (selector, min, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value.length >= min ? undefined : message || 'Vui lòng nhập tối thiểu ' + min + ' ký tự';
+            return value.length >= min ? undefined : message || min + '文字以上で入力してください';
         }
     }
 }
@@ -166,7 +166,7 @@ Validator.isConfirmed = function (selector, getConfirmValue, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác';
+            return value === getConfirmValue() ? undefined : message || '入力された値が正しくありません';
         }
     }
 }

@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id']) && $_SESSION['r
                              ORDER BY d.year DESC, d.month DESC, d.day DESC");
         $stmt->execute([':user_id' => $_SESSION['user_id']]);
     }
-    $work_logs = $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+    $diary_logs = $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
 }
 ?>
 
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id']) && $_SESSION['r
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($work_logs as $log): ?>
+                        <?php foreach ($diary_logs as $log): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($log['id']); ?></td>
                             <td><?php echo htmlspecialchars($log['user_name'] ?? ''); ?></td>

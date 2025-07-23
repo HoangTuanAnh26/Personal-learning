@@ -13,20 +13,20 @@ function Validator(formSelector) {
 
     var validatorRules = {
         required: function (value) {
-            return value ? undefined : 'Vui lòng nhập trường này';
+            return value ? undefined : 'この項目は必須です';
         },
         email: function (value) {
             var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-            return regex.test(value) ? undefined : 'Vui lòng nhập email';
+            return regex.test(value) ? undefined : '正しいメールアドレスを入力してください';
         },
         min: function (min) {
             return function (value) {
-                return value.length >= min ? undefined : `Vui lòng nhập ít nhất ${min} ký tự`;
+                return value.length >= min ? undefined : `${min}文字以上で入力してください`;
             }
         },
         max: function (max) {
             return function (value) {
-                return value.length <= max ? undefined : `Vui lòng nhập nhiều nhất ${max} ký tự`;
+                return value.length <= max ? undefined : `${max}文字以内で入力してください`;
             }
         }
     };
