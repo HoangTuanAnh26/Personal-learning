@@ -35,7 +35,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
 
-    <h1>Wed 3</h1>
+    <h1>Wed 2</h1>
 
     <p>以下は練習用のリンクです：</p>
     <ul>

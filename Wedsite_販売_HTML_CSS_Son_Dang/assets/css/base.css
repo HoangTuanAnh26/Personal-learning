@@ -6,35 +6,46 @@
     --border-color: #dbdbdb;
     --star-gold-color: #FFCE3E;
     
-    --header-height: 130px;
-    --nabar-height: 46.5px;
-    --header-with-search-height: calc(var(--header-height) - var(--nabar-height))
+    --header-height: 120px;
+    --nabar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
 }
-
-body {
-    font-family: 'Noto Sans JP', sans-serif;
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
-
-h1 {
-    font-weight: 700; 
+  
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
-
-h2 {
-    font-weight: 500; 
+  
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
-
-p.light {
-    font-weight: 300; 
+  
+.roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
-
-p.extra-light {
-    font-weight: 100; 
+  
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
-
-p.normal {
-    font-weight: 400; 
+  
+.roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
 }
-
   
 *{
     box-sizing: inherit;
@@ -47,24 +58,16 @@ html {
 }
 
 /* Responsive */
-.grid{
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width {
-    width: 100%;
-}
-
 .grid__row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -5px;/* Tạo ra phần khoảng cách 10px cho các Column */
+    margin-right: -5px;
 }
 
 /* Test */
 .grid__column-2 {
-    padding-left: 5px;
+    padding-left: 5px;/* Tạo ra phần khoảng cách 10px cho các Column */
     padding-right: 5px;
     width: 16.6667%;
 }
@@ -76,10 +79,11 @@ html {
 }
 
 .grid__column-10 {
-    padding-left: 5px;
+    padding-left: 5px;/* Tạo ra phần khoảng cách 10px cho các Column */
     padding-right: 5px;
     width: 83.3334%;
 }
+
 
 /* Animation Tạo hiệu ứng mà qr_code hiện lên dần dần*/
 @keyframes fadeIn {
@@ -87,7 +91,7 @@ html {
         opacity: 0;
     }
     to {
-        opacity: 0,9;
+        opacity: 0.9;
     }
 }
 
@@ -100,32 +104,30 @@ html {
     left: 0;
     display: flex;
 }
-
 .modal__overlay {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
 }
-
 .modal__body {
     margin: auto;
     position: relative;
     z-index: 1;
 }
 
-/* Button style vì dùng chung nhiều nên viết lên file base*/
+/* Btn */
 .btn {
     min-width: 142px;
     height: 36px;
     text-decoration: none;
     border: none;
     border-radius: 2px;
-    font-size: 1,5rem;
+    font-size: 1.5rem;
     padding: 0 12px;
     cursor: pointer;
     background-color: var(--white-color);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 1.6rem;
@@ -139,18 +141,15 @@ html {
     font-size: 12px;
     padding: 0 8px;
 }
-
 .btn.btn--primary {
     color: var(--white-color);
     background-color: var(--primary-color);
 }
-
 .btn.btn--disabled {
     color: #949494;
     cursor: default;
     background-color: #c3c3c3;
-
-}
+} 
 
 /* Selection: Lựa chọn */ 
 .select-input {
@@ -183,7 +182,7 @@ html {
 
 .select-input__list {
     position: absolute;
-    left: 0px;
+    left: 0;
     right: 0;
     top: 28px;
     border-radius: 2px;
@@ -198,13 +197,13 @@ html {
     display: block;
     position: absolute;
     right: 0;
-    top: -7px;
+    top: -10px;
     width: 100%;
-    height: 7px;
+    height: 10px;
 }
 
 .select-input__link {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--text-color);
     text-decoration: none;
     display: block;
@@ -233,7 +232,7 @@ html {
 }
 
 .pagination-item--active .pagination-item__link:hover {
-    background-color: #fbd25b;
+    background-color: #fbd25b; 
 }
 
 .pagination-item__link {
@@ -248,5 +247,3 @@ html {
     text-align: center;
     border-radius: 2px;
 }
-
-/* Khi chỉ vào 値段, icon bị lệch, wed tieng viet chieu dai cua cha va con bang nhau */

@@ -1287,10 +1287,8 @@ i.home-product-item__like-icon-fill {
     position: absolute;
     top: 0;
     right: 0;
-    /* width: 40px;
-    height: 36px; */
-    width: 48px; /* Tăng từ 40px để có thêm không gian */
-    height: 40px; /* Tăng từ 36px để chứa nội dung tốt hơn */
+    width: 40px;
+    height: 36px;
     text-align: center;
     background-color: rgba(255, 216, 64, 0.94);
     border-top-right-radius: 2px;
@@ -1301,8 +1299,7 @@ i.home-product-item__like-icon-fill {
     position: absolute;
     left: 0;
     bottom: -6px;
-    /* border-width: 0 20px 6px; */
-    border-width: 0 24px 6px; /* Điều chỉnh cho phù hợp với width mới */
+    border-width: 0 20px 6px;
     border-style: solid;
     color: rgba(255, 216, 64, 0.94);
     border-color: transparent currentColor transparent currentColor;
@@ -1324,12 +1321,6 @@ i.home-product-item__like-icon-fill {
     position: relative;
     top: 2px;
     font-weight: 600;
-}
-
-.home-product-item__sale-off-percent,
-.home-product-item__sale-off-label {
-    position: static; /* Loại bỏ position relative */
-    line-height: 1.2rem; /* Chuẩn hóa line-height */
 }
 
 .home-product__pagination {

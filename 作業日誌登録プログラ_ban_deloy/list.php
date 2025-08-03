@@ -101,3 +101,12 @@ $work_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </body>
 
 </html>
+
+<!-- Bảng nó cứ đen đen kiểu gì, muốn chuyển sang xanh dương -->
+
+<!-- Vẫn chưa hiểu ý nghĩa đoạn này
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+} -->

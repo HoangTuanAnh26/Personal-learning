@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 21, 2025 lúc 05:32 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.1.25
+-- Máy chủ: sql303.infinityfree.com
+-- Thời gian đã tạo: Th7 27, 2025 lúc 11:06 AM
+-- Phiên bản máy phục vụ: 11.4.7-MariaDB
+-- Phiên bản PHP: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `webpg2_2025`
+-- Cơ sở dữ liệu: `webpg2_02`
 --
 
 -- --------------------------------------------------------
@@ -53,16 +54,10 @@ INSERT INTO `diary` (`id`, `year`, `month`, `day`, `shour`, `smin`, `ehour`, `em
 (7, 2025, 6, 18, 3, 30, 15, 30, 2, 7, 5),
 (9, 2025, 6, 18, 11, 31, 14, 31, 3, 3, 4),
 (10, 2025, 6, 18, 2, 31, 14, 31, 3, 5, 4),
-(11, 0, 0, 0, 0, 0, 0, 0, 3, 8, 6),
-(12, 2025, 6, 19, 11, 54, 23, 54, 9, 8, 6),
-(13, 2025, 6, 19, 9, 46, 12, 46, 3, 3, 6),
-(14, 2025, 6, 19, 11, 4, 13, 4, 2, 2, 6),
-(15, 2025, 6, 19, 3, 31, 17, 31, 9, 8, 6),
 (16, 2025, 5, 21, 2, 30, 14, 30, 8, 7, 8),
 (19, 2025, 7, 3, 2, 0, 13, 0, 8, 6, 4),
 (21, 2025, 7, 6, 1, 4, 15, 4, 1, 1, 4),
-(22, 2025, 7, 11, 7, 54, 19, 54, 8, 6, 6),
-(24, 2025, 7, 16, 4, 56, 6, 56, 8, 7, 6);
+(27, 2025, 7, 21, 8, 32, 19, 32, 8, 6, 5);
 
 -- --------------------------------------------------------
 
@@ -108,9 +103,8 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`id`, `diary_id`, `notes`) VALUES
-(2, 11, ''),
-(3, 12, 'hoc rot + dot tien'),
-(4, 19, 'asdfghjkl');
+(4, 19, 'asdfghjkl'),
+(9, 27, 'abc');
 
 -- --------------------------------------------------------
 
@@ -132,9 +126,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `userID`, `password`, `role`) VALUES
 (4, '01', '$2y$10$NZPYLQlTwEcMiDtbwdBvwuGWJwOcLmu.7ZBQz/t3hmvI0emPdN66G', 'user'),
 (5, 'webpg2', '$2y$10$2M6zzZ.iZ74gU/0GZ1Bereet6ZVrQJLvSqukI8t/FrpMovQGFPWh2', 'user'),
-(6, 'hoangnamtruong+hocrot+dottien', '$2y$10$t37o.Fyvp2ala.B3Oeo1A./cZiw5.O0CDCMCl4boFwr8hKe1COr/q', 'admin'),
 (7, '02', '$2y$10$IT8bYeJyOOTapFjPbSPAIuMfMLqMhhsDi6tbgeO62ue0QcxvsTMgO', 'user'),
-(8, '03', '$2y$10$cEjoocPIO7jqYGcejHyAwONSylRwlxe8FMhuwCQh3G/OZcRFIaNtS', 'user');
+(8, '03', '$2y$10$cEjoocPIO7jqYGcejHyAwONSylRwlxe8FMhuwCQh3G/OZcRFIaNtS', 'user'),
+(10, 'admin', '$2y$10$mzXbrIy8fEtBTht6LrYuKu0kx9XVOR6GsydbZs/PFmGSnagDTvut2', 'admin');
 
 -- --------------------------------------------------------
 
@@ -162,24 +156,6 @@ INSERT INTO `work` (`id`, `shigoto`) VALUES
 (8, '配達ドライバー'),
 (9, '事務員'),
 (10, '看護師');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `work_logs`
---
-
-CREATE TABLE `work_logs` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `work_date` date NOT NULL,
-  `start_time` time NOT NULL,
-  `end_time` time NOT NULL,
-  `total_hours` decimal(5,2) NOT NULL,
-  `field_id` int(11) DEFAULT NULL,
-  `work_id` int(11) DEFAULT NULL,
-  `notes` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -221,15 +197,6 @@ ALTER TABLE `work`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `work_logs`
---
-ALTER TABLE `work_logs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `field_id` (`field_id`),
-  ADD KEY `work_id` (`work_id`);
-
---
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -249,19 +216,13 @@ ALTER TABLE `field`
 -- AUTO_INCREMENT cho bảng `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT cho bảng `work_logs`
---
-ALTER TABLE `work_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -280,14 +241,6 @@ ALTER TABLE `diary`
 --
 ALTER TABLE `notes`
   ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`diary_id`) REFERENCES `diary` (`id`) ON DELETE CASCADE;
-
---
--- Các ràng buộc cho bảng `work_logs`
---
-ALTER TABLE `work_logs`
-  ADD CONSTRAINT `work_logs_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `work_logs_ibfk_2` FOREIGN KEY (`field_id`) REFERENCES `field` (`id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `work_logs_ibfk_3` FOREIGN KEY (`work_id`) REFERENCES `work` (`id`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
