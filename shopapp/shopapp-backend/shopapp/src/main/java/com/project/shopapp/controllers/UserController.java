@@ -1,4 +1,4 @@
-package com.project.shopapp.controller;
+package com.project.shopapp.controllers;
 
 import com.project.shopapp.dtos.*;
 import jakarta.validation.Valid;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("${api.prefix}/users")
 public class UserController {
 
     @PostMapping("/register")

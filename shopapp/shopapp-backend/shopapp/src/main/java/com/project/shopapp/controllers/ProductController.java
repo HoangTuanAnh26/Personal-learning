@@ -1,4 +1,4 @@
-package com.project.shopapp.controller;
+package com.project.shopapp.controllers;
 
 import com.project.shopapp.dtos.ProductDTO;
 import jakarta.validation.Valid;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/products")
+@RequestMapping("${api.prefix}/products")
 public class ProductController {
 
     @PostMapping(value = "",

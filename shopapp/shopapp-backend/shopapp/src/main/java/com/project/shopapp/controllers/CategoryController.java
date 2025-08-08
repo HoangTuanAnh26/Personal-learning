@@ -1,18 +1,15 @@
-package com.project.shopapp.controller;
+package com.project.shopapp.controllers;
 
-import com.project.shopapp.dtos.CategoryDTO;
-import com.project.shopapp.dtos.ProductDTO;
+import com.project.shopapp.dtos.*;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/categories")
+@RequestMapping("${api.prefix}/categories")
 //@Validated
 
 public class CategoryController {
