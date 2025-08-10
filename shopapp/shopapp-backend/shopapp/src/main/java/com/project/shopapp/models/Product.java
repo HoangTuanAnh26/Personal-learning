@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+
 public class Product extends BaseEntity {
 
     @Id

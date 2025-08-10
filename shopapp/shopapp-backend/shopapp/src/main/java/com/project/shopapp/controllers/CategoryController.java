@@ -1,7 +1,10 @@
 package com.project.shopapp.controllers;
 
 import com.project.shopapp.dtos.*;
+import com.project.shopapp.models.Category;
+import com.project.shopapp.services.CategoryService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -11,43 +14,50 @@ import java.util.List;
 @RestController
 @RequestMapping("${api.prefix}/categories")
 //@Validated
-
+//Dependency Injection
+@RequiredArgsConstructor
 public class CategoryController {
+    private final CategoryService categoryService;
+
+    @PostMapping("")
+//Nếu tham số truyền vào là 1 object thì sao? => Data Transfer Object = Request Object
+    public ResponseEntity<?> createCategory(@Valid @RequestBody CategoryDTO categoryDTO,
+                                            BindingResult result) {
+        if(result.hasErrors()) {
+            List<String> errorMessages = result.getFieldErrors()
+                    .stream()
+                    .map(FieldError::getDefaultMessage)
+                    .toList();
+
+            return ResponseEntity.badRequest().body(errorMessages);
+        }
+
+        categoryService.createCategory(categoryDTO);
+        return ResponseEntity.ok().body("Insert category successfully");
+    }
+
     @GetMapping("")
-    public ResponseEntity<String> getAllCategories(
+    public ResponseEntity<List<Category>> getAllCategories(
             @RequestParam("page") int page,
             @RequestParam("limit") int limit
     ) {
-        return ResponseEntity.ok(String.format("getAllCategories, page = %d, limit = %d", page, limit));
-    }
-
-    @PostMapping("")
-//POST http://localhost:8088/v1/api/products
-    public ResponseEntity<?> createProduct(
-            @Valid @RequestBody ProductDTO productDTO,
-            BindingResult result
-    ) {
-        if (result.hasErrors()) {
-            List<String> errorMessages = result.getFieldErrors().stream()
-                    .map(FieldError::getDefaultMessage)
-                    .toList();
-            return ResponseEntity.badRequest().body(errorMessages);
-        }
-        try {
-            return ResponseEntity.ok().body("Product created successfully");
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        List<Category> categories = categoryService.getAllCategories();
+        return ResponseEntity.ok(categories);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateCategory(@PathVariable Long id) {
-        return ResponseEntity.ok("This is updateCategory with id = " + id);
+    public ResponseEntity<String> updateCategory(
+            @PathVariable Long id,
+            @Valid @RequestBody CategoryDTO categoryDTO
+    ) {
+        categoryService.updateCategory(id, categoryDTO);
+        return ResponseEntity.ok("Update category successfully");
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCategory(@PathVariable Long id) {
-        return ResponseEntity.ok("deleteCategory with id = " + id);
+        categoryService.deleteCategory(id);
+        return ResponseEntity.ok("Delete category with id: " + id + " successfully");
     }
 }
 
